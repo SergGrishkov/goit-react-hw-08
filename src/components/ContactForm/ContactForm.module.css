@@ -1,0 +1,24 @@
+label {
+    display: block;
+}
+
+.input {
+    display: block;
+    height: 70px;
+}
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.info {
+    color: rgb(218, 7, 67);
+    font-size: 12px;
+}
