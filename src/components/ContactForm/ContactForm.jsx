@@ -1,18 +1,15 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contacts/operations";
+import toast from "react-hot-toast";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const dispatch = useDispatch();
-  const nameId = useId();
-  const numberId = useId();
-  const fieldsValue = {
-    name: "",
-    number: "",
-  };
+  const userNameId = useId();
+  const userNumberId = useId();
 
   const SignupSchema = Yup.object().shape({
     name: Yup.string()
@@ -34,30 +31,53 @@ export const ContactForm = () => {
       name: value.name,
       number: value.number,
     };
-    dispatch(addContact(contactInfo));
+    dispatch(addContact(contactInfo))
+      .unwrap()
+      .then(() => {
+        toast.success("Contact added!");
+      })
+      .catch(() => {
+        toast.error("Sorry, something went wrong.");
+      });
     actions.resetForm();
   };
 
-
-  return (
-    <Formik
-      initialValues={fieldsValue}
-      validationSchema={SignupSchema}
-      onSubmit={handleSubmit}
-    >
-      <Form className={css.searchForm}>
-        <div className={css.input}>
-          <label htmlFor={nameId}>Name</label>
-          <Field type="text" name="name" id={nameId} />
-          <ErrorMessage name="name" component="p" className={css.info} />
-        </div>
-        <div className={css.input}>
-          <label htmlFor={numberId}>Number</label>
-          <Field type="text" name="number" id={numberId} />
-          <ErrorMessage name="number" component="p" className={css.info} />
-        </div>
-        <button type="submit">Add contact</button>
-      </Form>
-    </Formik>
-  );
+return (
+  <Formik
+    initialValues={{
+      name: "",
+      number: "",
+    }}
+    onSubmit={handleSubmit}
+    validationSchema={SignupSchema}
+  >
+    <Form className={css.form}>
+      <div className={css.formInput}>
+        <label htmlFor={userNameId}>Name</label>
+        <Field
+          className={css.formInputField}
+          type="text"
+          name="name"
+          id={userNameId}
+        />
+        <ErrorMessage name="name" component="span" style={{ color: "red" }} />
+      </div>
+      <div className={css.formInput}>
+        <label htmlFor={userNumberId}>Number</label>
+        <Field
+          className={css.formInputField}
+          type="tel"
+          name="number"
+          id={userNumberId}
+        />
+        <ErrorMessage name="number" component="span" style={{ color: "red" }} />
+      </div>
+      <button className={css.button} type="submit">
+        Add contact
+      </button>
+    </Form>
+  </Formik>
+);
 };
+
+export default ContactForm;

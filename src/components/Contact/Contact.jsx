@@ -1,34 +1,37 @@
 import { FaPhone } from "react-icons/fa6";
 import { BsFillPersonFill } from "react-icons/bs";
-import { deleteContact } from "../../redux/contactsOps";
-import { useDispatch } from "react-redux";
+import { useState } from "react";
+import ModalDelete from "../Modal/ModalDelete";
 import css from "./Contact.module.css";
 
 
 export const Contact = ({ contacts: { name, number, id } }) => {
-  const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <>
-      <div className={css.container}>
-        <div>
-          <p>
-            <BsFillPersonFill />
-            {name}
-          </p>
-          <p>
-            <FaPhone />
-            {number}
-          </p>
-        </div>
-        <button
-          type="button"
-          className={id}
-          onClick={() => dispatch(deleteContact(id))}
-        >
-          Delete
-        </button>
-      </div>
-    </>
-  );
+   const handleOpen = () => {
+     setIsOpen(true);
+   };
+
+   const handleClose = () => {
+     setIsOpen(false);
+   };
+
+   return (
+     <div className={css.container}>
+       <div>
+         <p className={css.paragraphName}>
+           <BsFillPersonFill className={css.icon} />
+           {name}
+         </p>
+         <p>
+           <FaPhone className={css.user} />
+           {number}
+         </p>
+       </div>
+       <button className={css.button} type="button" onClick={handleOpen}>
+         Delete
+       </button>
+       <ModalDelete isOpen={isOpen} onClose={handleClose} contactId={id} />
+     </div>
+   );
 };

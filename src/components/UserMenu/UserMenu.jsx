@@ -14,7 +14,7 @@ const UserMenu = () => {
   return (
     <div className={css.titleName}>
       <p className={css.title}>
-        Hello <span className={css.spanName}>{user.name}</span>
+        <span className={css.spanName}> {user.name}</span>
       </p>
       <button
         className={css.button}

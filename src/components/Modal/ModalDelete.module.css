@@ -1,0 +1,12 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(8, 216, 8);
+}

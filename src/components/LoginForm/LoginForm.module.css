@@ -1,0 +1,41 @@
+.mainForm {
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+}
+
+.input {
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 360px;
+    height: 40px;
+    display: block;
+}
+
+.inputList {
+    margin: 0 auto;
+    text-align: start;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 390px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(72, 72, 245);
+}
+
+.inputItem {
+    margin-top: 16px;
+}
