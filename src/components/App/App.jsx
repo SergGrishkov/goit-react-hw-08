@@ -1,5 +1,4 @@
 import { Toaster } from "react-hot-toast";
-import "../../../node_modules/modern-normalize/modern-normalize.css";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Suspense, lazy, useEffect } from "react";
@@ -10,6 +9,7 @@ import Loader from "../Loader/Loader";
 import PrivateRoute from "../PrivateRoute";
 import css from "./App.module.css";
 import Layout from "../Layout/Layout";
+import "../../../node_modules/modern-normalize/modern-normalize.css";
 
 const Contacts = lazy(() => import("../../pages/Contacts/Contacts"));
 const Login = lazy(() => import("../../pages/Login/Login"));

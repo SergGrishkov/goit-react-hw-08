@@ -1,0 +1,25 @@
+.titleName {
+    display: flex;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    margin-left: 4px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.title {
+    font-size: 20px;
+    color: rgb(8, 216, 8);
+}
+
+.spanName {
+    color: rgb(246, 246, 6);
+}
