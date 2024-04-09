@@ -1,0 +1,44 @@
+.form {
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 8px;
+    
+}
+
+.inputBox {
+    text-align: start;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 395px;
+    margin: 0 auto;
+}
+
+.input {
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 360px;
+    height: 40px;
+    display: block;
+}
+
+.inputItem {
+    text-align: start;
+    margin-top: 16px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: 1px solid black;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    background-color: transparent;
+    background-color: rgb(72, 72, 245);
+}

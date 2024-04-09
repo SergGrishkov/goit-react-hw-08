@@ -1,0 +1,25 @@
+.mainBlock {
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+}
+.text {
+  padding: 0 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: start;
+  text-indent: 40px;
+}
+.textLast {
+  padding: 0 16px;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.link {
+  display: inline-block;
+  color: rgb(57, 8, 216);
+}
+.link:hover {
+  transform: scale(1.1);
+}
